@@ -24,3 +24,12 @@ This week from 2020.10.11 to 2020.10.12, I worked on how to use `pandas` package
     
 2. I look around `MdTraj` package to do some data manipulation, like loading pdb file into memroy from URL, getting topology strcture to convert atoms into `pandas` dataframe,  using `stom_slice()` to slice atoms by indexs and so on.
 
+## The fourth week
+
+Problems: We want to include all atoms and hetatms into one data frame.
+
+1. I wrote two functions to return all info. 
+    * `get_all_atom()` would return all atom, inclduing hetatm, ter, namely the whole part will be returned.                   
+    * `get_atom_and_hetatm()` only return atom and hetatm.
+
+2. I wrote a class of one pdb file which has all the methods which can return the desired attribution of one pdb file. And I tested all of them. They worked well.
