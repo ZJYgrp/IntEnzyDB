@@ -33,3 +33,13 @@ Problems: We want to include all atoms and hetatms into one data frame.
     * `get_atom_and_hetatm()` only return atom and hetatm.
 
 2. I wrote a class of one pdb file which has all the methods which can return the desired attribution of one pdb file. And I tested all of them. They worked well.
+
+## The fifth week
+
+Problems: We want to create two tables for each pdb file, one is called general table, another is called atom_htmatm table and merge multiple of them into one longer table.
+
+1. I wrote one function called `get_general_table()` which gets all the desired fields inclduing residue sequences.
+
+2. Another function is called `get_atom_hetatm_table()` which only includes atom and htmatm, this table also joins with another atom mass table, the final table can show each atom mass.
+
+At last, I fixed a bug from the previous week, our `get_missing_residue()` function can accommodate more missing residue types.
