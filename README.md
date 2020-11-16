@@ -43,3 +43,19 @@ Problems: We want to create two tables for each pdb file, one is called general 
 2. Another function is called `get_atom_hetatm_table()` which only includes atom and htmatm, this table also joins with another atom mass table, the final table can show each atom mass.
 
 At last, I fixed a bug from the previous week, our `get_missing_residue()` function can accommodate more missing residue types.
+
+## The eighth week
+
+1. I found a bug in `get_enzyme_type()` method, some pdb files have multiple words for enzyme type splitted by one white space. So I chose the Date as the seperator to clip the enzyme type on the first line.
+
+2. The second bug is in `get_general_table()` method, some pdb files don't have missing residues parts, so I added `if isinstance(Missing, str) or Missing is None:` extra condition to deal with this situation when it doesn't have missing residues.
+
+3. I added one extra column `name` which is the original sign of atom side by the full atomic name column called `Name` in the data frame returned by `get_atom_hetatm_table()` method at the same time I changed function from `join()` to `merge()` when I concatenate two pandad data frames.
+
+4. Show the atomic table in the file which can be used to merge with atom and hetatm table.
+
+5. **We found that average time of process random 100 pdb files is 248.84s. So from the formula we have in the email you sent me, I calculated we need around 5 days to extract all general table and atom and hetatm tabled of 170k pdb files.** 
+
+6. I found that there were a couple of pdb files which are None, so I wrote some control flows to raise warnings when the pdb files are `None`. After seraching on the RCSB PDB [https://www.rcsb.org/structure/4U20](https://www.rcsb.org/structure/4U20) website, we found that this pdb has corresponding file, but because of huge file size, we can't access ths PDB format as other files. It only provides PDBx format which is beyond our current class capacity. 
+
+7. I also found there are some pdb files which have pdb format file but lack some desired fields. I wrote some control flows to handle them issue. When the field we want is lack in the pdb file, we raise warnings to tell users that this field is missing in this file.
