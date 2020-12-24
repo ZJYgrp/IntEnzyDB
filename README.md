@@ -85,3 +85,4 @@ At last, I fixed a bug from the previous week, our `get_missing_residue()` funct
 7. Extract Global Stoichiometry of each pdb file using Web Grab technology. The method of class is `get_glo_sto()`.
 
 8. Extract Mutation field in each pdb website using Web Grab technology. The method of class is `get_mutation()`.
+9. We finishe
