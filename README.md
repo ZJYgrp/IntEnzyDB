@@ -1,6 +1,6 @@
 **Download html file to view in a browser to have a full better view of jupyter notebook.**
 
-**If you don't wanna downlaod, you can click md file in `code` tab to view part of them within GitHub directly.**
+**If you don't wanna downlaod, you can click `ipynb` file in `code` tab to view part of them within GitHub directly.**
 
 # database_construction
 This git repo is used to build the workflow for merging two existing databases, protein structure databank and kinetics databank.
