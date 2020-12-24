@@ -67,3 +67,21 @@ At last, I fixed a bug from the previous week, our `get_missing_residue()` funct
 8. I found another bug in `get_name()` method when the name in the PDB file has multiple lines to be recorded. So I added additional codes to deal with this situation `if ";" in res:`. We can test this situation using `pdb("100d").get_name()` and we get the result `DNA/RNA (5'-R(*CP*)-D(*CP*GP*GP*CP*GP*CP*CP*GP*)-R(*G)-3')`.
 
 9. *We want to write a check function or process, but I have my own opinion,* first, I found this is a very hard process, because there are a lot of PDB files and their formats in PDB file are not unified, there is no standard format in these PDB files. So a function or process which can check each entry extracted from these methods is still biased and not accurate. So I suggest we correct and fix bugs when we find them while we use these tables.
+
+## The first winter break work
+
+1. Corrected all warning messages. Specify what field is missing in warning messages of each `get_*()` method.
+
+2. Fixed a bug in `get_chain_id()` method. Because one protein may have multiple entities including multiple chains in different lines in one pdb file. Now iterate all lines in pdb files to search all chains.
+
+3. Fixed another bug. In the past, I used `len()` to get number of one sequence in the table extracted. But there are some `None` at the end of this table. so I decided to use numbers provided in the pdb file which is exact.
+
+3. Extract `FASTA` Sequence of all chains in one pdb file using web grab technology. The method of class is `get_fasta()`. Add this information as a column in `general_table()`.
+
+4. Extract Missing Residue of all chains inclduing yellow one and grey one. This took me some time to finish because I used new PDB Data GraphiQL query syntax connected to Data API and embedded this URL encoded query in python to grab information in websites. This method of class is `get_part_mod_resi()` for yellow box and `get_unmod_resi()` for grey box.
+
+5. Extract Entity ID with its belonging chains. The method of class is `get_entity_id()`.
+
+6. Extract Global Stoichiometry of each pdb file using Web Grab technology. The method of class is `get_glo_sto()`.
+
+7. Extract Mutation field in each pdb website using Web Grab technology. The method of class is `get_mutation()`.
