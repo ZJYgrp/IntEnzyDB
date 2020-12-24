@@ -76,12 +76,12 @@ At last, I fixed a bug from the previous week, our `get_missing_residue()` funct
 
 3. Fixed another bug. In the past, I used `len()` to get number of one sequence in the table extracted. But there are some `None` at the end of this table. so I decided to use numbers provided in the pdb file which is exact.
 
-3. Extract `FASTA` Sequence of all chains in one pdb file using web grab technology. The method of class is `get_fasta()`. Add this information as a column in `general_table()`.
+4. Extract `FASTA` Sequence of all chains in one pdb file using web grab technology. The method of class is `get_fasta()`. Add this information as a column in `general_table()`.
 
-4. Extract Missing Residue of all chains inclduing yellow one and grey one. This took me some time to finish because I used new PDB Data GraphiQL query syntax connected to Data API and embedded this URL encoded query in python to grab information in websites. This method of class is `get_part_mod_resi()` for yellow box and `get_unmod_resi()` for grey box.
+5. Extract Missing Residue of all chains inclduing yellow one and grey one. This took me some time to finish because I used new PDB Data GraphiQL query syntax connected to Data API and embedded this URL encoded query in python to grab information in websites. This method of class is `get_part_mod_resi()` for yellow box and `get_unmod_resi()` for grey box.
 
-5. Extract Entity ID with its belonging chains. The method of class is `get_entity_id()`.
+6. Extract Entity ID with its belonging chains. The method of class is `get_entity_id()`.
 
-6. Extract Global Stoichiometry of each pdb file using Web Grab technology. The method of class is `get_glo_sto()`.
+7. Extract Global Stoichiometry of each pdb file using Web Grab technology. The method of class is `get_glo_sto()`.
 
-7. Extract Mutation field in each pdb website using Web Grab technology. The method of class is `get_mutation()`.
+8. Extract Mutation field in each pdb website using Web Grab technology. The method of class is `get_mutation()`.
