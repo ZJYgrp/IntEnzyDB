@@ -8,5 +8,5 @@
 3. Inserting above table into main.html
 4. Run this code and debug it as a preview
 
-![](./screenshots/PDB_static_preview)
+![](./screenshots/PDB_static_preview.png)
 
