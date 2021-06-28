@@ -1,4 +1,4 @@
-6/28_log
+# 6/28_log: Build a basic static web table showing PDB csv
 
 **We used [vs code](https://code.visualstudio.com/) as our development IDE and *Google Chrome* as our interpreter.**
 
